@@ -77,14 +77,14 @@ struct LinkedList *add(struct LinkedList *head, const int value)
     return head;
 }
 
-void destroy_linked_list(struct LinkedList *cell)
+void destroy_linked_list(struct LinkedList *head)
 {
     struct LinkedList *tmp = NULL;
-    while (cell != NULL)
+    while (head != NULL)
     {
-        tmp = cell->next;
-        free(cell);
-        cell = tmp;
+        tmp = head->next;
+        free(head);
+        head = tmp;
     }
 }
 
