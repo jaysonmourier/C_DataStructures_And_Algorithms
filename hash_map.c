@@ -1,3 +1,26 @@
+/**
+ * File: hash_map.c
+ * Author: Jayson Mourier
+ *
+ * Description:
+ * This file provides a simple implementation of a hash map using chaining for collision resolution. The hash map stores pairs of integers as keys and values. 
+ * This implementation supports basic operations such as insertion, deletion, updating values, and retrieving values based on a key.
+ *
+ * The hash map uses an array of pointers to `struct HashMap` nodes, each of which represents an entry in the hash map. Collisions are handled by linking entries with the same hash index into a linked list.
+ *
+ * Key Functions:
+ * - hash: Computes the hash index for a given key based on the size of the hash table.
+ * - create_hashmap: Allocates memory for and initializes a new hash map node with a specified key and value.
+ * - add: Adds a new key-value pair to the hash map or updates the value of an existing key. Handles collisions using chaining.
+ * - get: Retrieves the value associated with a specified key from the hash map.
+ * - destroy_map: Frees all memory associated with the hash map, including all dynamically allocated nodes and the hash table itself.
+ *
+ * This file also includes a main function to demonstrate the usage of the hash map by adding, updating, and retrieving entries, as well as properly cleaning up memory.
+ *
+ * Usage:
+ * Compile and run this program to see how a simple hash map operates with basic integer keys and values. The program demonstrates the insertion of a key-value pair, updating an existing entry, retrieving an entry, and the cleanup process.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,3 +1,27 @@
+/**
+ * File: linked_list.c
+ * Author: Jayson Mourier
+ *
+ * Description:
+ * This file contains the implementation of a singly linked list in C. It includes functions for creating nodes, appending elements,
+ * printing the list, and freeing the allocated memory. This implementation is aimed at demonstrating fundamental operations
+ * on linked lists such as insertion at the end, traversal, and deletion of the entire list.
+ *
+ * Functions:
+ * - create_cell: Allocates and returns a new node with a given value. Returns NULL if memory allocation fails.
+ * - tail: Returns the last node of the linked list. Used internally to find the end of the list for appending new elements.
+ * - add: Appends a new element to the end of the list. If the list is empty, it creates a new head node. Returns the head of the list.
+ * - print_linked_list: Prints all elements of the list to standard output in a formatted manner, showing the linkage between nodes.
+ * - destroy_linked_list: Frees all nodes of the linked list to avoid memory leaks, effectively destroying the list.
+ *
+ * The main function demonstrates how to use these functions by creating a linked list, appending several elements, printing the list,
+ * and finally destroying the list to free the allocated memory.
+ *
+ * Usage:
+ * This implementation can be used as a learning tool for understanding how linked lists work in C. It can be extended to include
+ * more complex operations such as insertion at specific positions, deletion of nodes, and searching for elements.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
