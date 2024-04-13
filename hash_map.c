@@ -8,12 +8,12 @@ struct HashMap
     struct HashMap *next;
 };
 
-int hash(int key, int size)
+int hash(const int key, const int size)
 {
     return abs(key) % size;
 }
 
-struct HashMap *create_hashmap(int key, int value)
+struct HashMap *create_hashmap(const int key, const int value)
 {
     struct HashMap *HashMap = (struct HashMap *)malloc(sizeof(struct HashMap));
 
@@ -29,7 +29,7 @@ struct HashMap *create_hashmap(int key, int value)
     return HashMap;
 }
 
-int add(struct HashMap **table, int size, int key, int value)
+int add(struct HashMap **table, const int size, const int key, const int value)
 {
     int h = hash(key, size);
     struct HashMap *node = table[h];
@@ -61,7 +61,7 @@ int add(struct HashMap **table, int size, int key, int value)
     return (prev->next == NULL) ? 1 : 0;
 }
 
-struct HashMap *get(struct HashMap **table, int size, int key)
+struct HashMap *get(struct HashMap **table, const int size, const int key)
 {
     int h = hash(key, size);
     struct HashMap *node = table[h];
@@ -76,7 +76,7 @@ struct HashMap *get(struct HashMap **table, int size, int key)
     return NULL;
 }
 
-void destroy_map(struct HashMap **table, int size)
+void destroy_map(struct HashMap **table, const int size)
 {
     if (table == NULL)
         return;
