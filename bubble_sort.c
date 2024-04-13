@@ -1,10 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-void sort(int *table, const int size)
+#define MAX_VALUE 150
+
+static inline void sort(int *restrict table, const int size)
 {
-    int sorted = 1;
+    if (table == NULL)
+        return;
+    int sorted;
     for (int i = size - 1; i > 0; --i)
     {
+        sorted = 1;
         for (int j = 0; j < i; ++j)
         {
             if (table[j + 1] < table[j])
@@ -20,7 +27,7 @@ void sort(int *table, const int size)
     }
 }
 
-void print_table(int *table, const int size)
+void print_table(int *restrict table, const int size)
 {
     for (int i = 0; i < size; ++i)
     {
@@ -29,16 +36,32 @@ void print_table(int *table, const int size)
     printf("\n");
 }
 
+/*
+ * fill table with random numbers
+ */
+void fill_table(int *restrict table, const int size)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        table[i] = rand() % MAX_VALUE;
+    }
+}
+
 int main(void)
 {
-    int table[10] = {
-        2, 4, 3, 2, 8, 6, 3, 12, 9, 1};
+    srand(time(NULL));
 
-    print_table(table, 10);
+    const int size = 64;
 
-    sort(table, 10);
+    int table[size];
 
-    print_table(table, 10);
+    fill_table(table, size);
+
+    print_table(table, size);
+
+    sort(table, size);
+
+    print_table(table, size);
 
     return 0;
 }
