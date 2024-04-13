@@ -8,7 +8,7 @@ static inline void sort(int *restrict table, const int size)
 {
     if (table == NULL)
         return;
-    int sorted;
+    int sorted, tmp;
     for (int i = size - 1; i > 0; --i)
     {
         sorted = 1;
@@ -16,7 +16,7 @@ static inline void sort(int *restrict table, const int size)
         {
             if (table[j + 1] < table[j])
             {
-                int tmp = table[j + 1];
+                tmp = table[j + 1];
                 table[j + 1] = table[j];
                 table[j] = tmp;
                 sorted = 0;
