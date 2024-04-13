@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void sort(int *table, int size)
+void sort(int *table, const int size)
 {
     int sorted = 1;
     for (int i = size - 1; i > 0; --i)
@@ -20,7 +20,7 @@ void sort(int *table, int size)
     }
 }
 
-void print_table(int *table, int size)
+void print_table(int *table, const int size)
 {
     for (int i = 0; i < size; ++i)
     {
