@@ -100,7 +100,7 @@ void destroy_map(struct HashMap **table, int size)
 
 int main(void)
 {
-    int size = 10;
+    const int size = 10;
 
     struct HashMap **table = (struct HashMap **)calloc(size * 2, sizeof(struct HashMap *));
 
